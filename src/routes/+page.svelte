@@ -2,6 +2,9 @@
 	import DocumentLink from '$lib/DocumentLink.svelte';
 	import Hover from '$lib/Hover.svelte';
 	import HintSet from '$lib/HintSet.svelte';
+	import StepHistory from '$lib/StepHistory.svelte';
+
+	import * as data from './data.json';
 </script>
 
 <section>
@@ -155,8 +158,18 @@
 	/>
 </section>
 
+<section>
+	<h5>StepHistory</h5>
+	<StepHistory data={data.stepHistory} />
+</section>
+
 <style>
-	:global(section, .HintSet > div) {
+	:global(.HintSet > *, section > :not(h5)) {
 		border: 1px solid black;
+	}
+	:global(section) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 </style>
