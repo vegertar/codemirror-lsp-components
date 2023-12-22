@@ -2,7 +2,7 @@
   import DocumentLink from "$lib/DocumentLink.svelte";
   import Hover from "$lib/Hover.svelte";
   import HintSet from "$lib/HintSet.svelte";
-  import StepHistory from "$lib/StepHistory.svelte";
+  import StepPlot from "$lib/StepPlot.svelte";
 
   import * as data from "./data.json";
 </script>
@@ -160,8 +160,8 @@
 </section>
 
 <section>
-  <h5>StepHistory</h5>
-  <StepHistory data={data.stepHistory} />
+  <h5>StepPlot</h5>
+  <StepPlot data={data.stepPlot} />
 </section>
 
 <style>
@@ -172,5 +172,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  :global(.StepPlot [data-step="0"]) {
+    fill: green;
+  }
+  :global(.StepPlot [data-step="1"]) {
+    fill: red;
   }
 </style>
